@@ -130,4 +130,16 @@ final class Helpers
             return $object;
         }, $objects);
     }
+
+    /**
+     * Checks if a variable can be iterated through.
+     *
+     * @param mixed $object
+     *
+     * @return bool
+     */
+    public static function isIterable($object)
+    {
+        return is_array($object) || is_object($object) || $object instanceof \Traversable;
+    }
 }
